@@ -5,11 +5,23 @@
 //until the argument becomes less than 1. In the divide() function, output the value of the
 //argument each time the function is called.
 
-//Assume that the function divide() is called with an argument of 4. Draw a call stack with
-//stack frames showing the parameter variable for all method invocations at the point
-//when the terminating condition becomes true.
+int divide(double numIn) {
+
+    std::cout << "numIn value: " << numIn << std::endl;
+
+    if (numIn >= 1) {
+        numIn = numIn/2;
+        numIn = divide(numIn);
+    }
+
+    std::cout << "Value less than 1: " << numIn << std::endl;
+    return numIn;
+}
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "INPUT NUMBER IS 4: " << std::endl;
+
+    divide(4);
+
     return 0;
 }
